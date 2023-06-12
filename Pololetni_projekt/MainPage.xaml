@@ -15,7 +15,6 @@
             <VerticalStackLayout
             Spacing="10"
             Padding="30,0"
-            VerticalOptions="Center"
             Grid.Row="0"
             BackgroundColor="Crimson">
 
@@ -25,6 +24,7 @@
             <Label x:Name="LocationLabel" Text="" />
                 <Label x:Name="temperature" Text="" BackgroundColor="blue" TextColor="White" Margin="0"/>
                 <Label x:Name="city" Text="" BackgroundColor="blue" TextColor="White"/>
+                <Label x:Name="pocasi" Text="" BackgroundColor="blue" TextColor="White"/>
                 
                 <!--Background="Aqua"-->
             <Border x:Name="border" 
@@ -36,9 +36,11 @@
                 </Border.StrokeShape>
                 <Label x:Name="Direction" Text="" HorizontalOptions="Center" FontSize="Large" />
             </Border>
-
+            <Image x:Name="image" WidthRequest="100" BackgroundColor="White"/>
+                
             </VerticalStackLayout>
 
+            
             <VerticalStackLayout Grid.Row="1" BackgroundColor="NavajoWhite">
                 <Image x:Name="compass"
                     Source="compass.png"

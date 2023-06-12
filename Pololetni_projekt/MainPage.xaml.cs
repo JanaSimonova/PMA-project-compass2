@@ -134,7 +134,7 @@ public partial class MainPage : ContentPage
             {
                 latitude = location.Latitude;
                 longitude= location.Longitude;
-                LocationLabel.Text =  $"Latitude: {latitude}, Longitude: {longitude}, Altitude: {location.Altitude}";
+                LocationLabel.Text =  $"Latitude: {latitude}, Longitude: {longitude}";
             }
         }
         // Catch one of the following exceptions:
@@ -156,6 +156,13 @@ public partial class MainPage : ContentPage
         // label vysledek
         temperature.Text = Convert.ToString(result.main.temperature) + "°C";
         city.Text = result.name;
+        pocasi.Text = result.weather[0].description;
+        // ## icon ## 
+        // - 1.method
+        // image.Source = result.weather[0].fullIconUrl;
+        // - 2.method
+        string ico = result.weather[0].icon;
+        image.Source = $"https://openweathermap.org/img/wn/{ico}@2x.png";
 
     }
     // konec polohy
