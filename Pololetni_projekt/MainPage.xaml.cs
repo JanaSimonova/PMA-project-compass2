@@ -1,7 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Xaml;
-
+using Pololetni_projekt.Services;
+using Pololetni_projekt.Models;
 
 namespace Pololetni_projekt;
 
@@ -10,8 +11,6 @@ namespace Pololetni_projekt;
 public partial class MainPage : ContentPage
 {
 
-    double latitude;
-    double longitude;
 
 	public MainPage()
 	{
@@ -111,14 +110,17 @@ public partial class MainPage : ContentPage
             
         MauiPopup.PopupAction.DisplayPopup(new PopupPage());
 
-
     }
 
 
-
+    // (konci moje chapani docela ) -- zkopirovano z microsoft, mata
+    // poloha
 
     private CancellationTokenSource _cancelTokenSource;
     private bool _isCheckingLocation;
+
+    double latitude;
+    double longitude;
 
     public async Task GetCurrentLocation()
     {
@@ -132,7 +134,7 @@ public partial class MainPage : ContentPage
             {
                 latitude = location.Latitude;
                 longitude= location.Longitude;
-                LocationLabel.Text =  $"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}";
+                LocationLabel.Text =  $"Latitude: {latitude}, Longitude: {longitude}, Altitude: {location.Altitude}";
             }
         }
         // Catch one of the following exceptions:
@@ -149,8 +151,22 @@ public partial class MainPage : ContentPage
         }
 
 
+        // -- Work with API
+        var result = await ApiService.GetWeather(latitude, longitude);
+        // label vysledek
+        temperature.Text = Convert.ToString(result.main.temperature) + "°C";
+        city.Text = result.name;
 
     }
+    // konec polohy
+
+
+    protected async override void OnAppearing()
+    {
+        base.OnAppearing();
+        
+    }
+
 }
 
 
