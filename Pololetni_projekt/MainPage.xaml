@@ -13,16 +13,19 @@
             </Grid.RowDefinitions>
             
             <VerticalStackLayout
-            Spacing="25"
+            Spacing="10"
             Padding="30,0"
-            VerticalOptions="Center"
             Grid.Row="0"
             BackgroundColor="Crimson">
 
             <Button HorizontalOptions="Start" Text="Calibrate" BackgroundColor="#f7e1ad" Clicked="Calibrate" TextColor="Black"></Button>
 
             <Label x:Name="CompassLabel" Text="Off" HorizontalOptions="Center"/>
-                <Label x:Name="LocationLabel" Text="" />
+            <Label x:Name="LocationLabel" Text="" />
+                <Label x:Name="temperature" Text="" BackgroundColor="blue" TextColor="White" Margin="0"/>
+                <Label x:Name="city" Text="" BackgroundColor="blue" TextColor="White"/>
+                <Label x:Name="pocasi" Text="" BackgroundColor="blue" TextColor="White"/>
+                
                 <!--Background="Aqua"-->
             <Border x:Name="border" 
                     Padding="16,8"
@@ -33,10 +36,12 @@
                 </Border.StrokeShape>
                 <Label x:Name="Direction" Text="" HorizontalOptions="Center" FontSize="Large" />
             </Border>
-
+            <Image x:Name="image" WidthRequest="100" BackgroundColor="White"/>
+                
             </VerticalStackLayout>
 
-            <VerticalStackLayout Grid.Row="2">
+            
+            <VerticalStackLayout Grid.Row="1" BackgroundColor="NavajoWhite">
                 <Image x:Name="compass"
                     Source="compass.png"
                     Grid.Row="1" 

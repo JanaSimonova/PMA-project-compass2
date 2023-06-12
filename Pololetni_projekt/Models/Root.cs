@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Google.Crypto.Tink.Signature;
 
 namespace Pololetni_projekt.Models
 {
@@ -21,6 +22,7 @@ namespace Pololetni_projekt.Models
     public class Main
     {
         public double temp { get; set; }
+        public double temperature => Math.Round(temp,1);
         public double feels_like { get; set; }
         public double temp_min { get; set; }
         public double temp_max { get; set; }
@@ -62,6 +64,7 @@ namespace Pololetni_projekt.Models
         public string main { get; set; }
         public string description { get; set; }
         public string icon { get; set; }
+        public string fullIconUrl => string.Format("https://openweathermap.org/img/wn/{0}@2x.png", icon);
     }
 
     public class Wind

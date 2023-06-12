@@ -9,12 +9,12 @@ using Pololetni_projekt.Models;
 
 namespace Pololetni_projekt.Services
 {
-    public class ApiService
+    public static class ApiService
     {
-        public async Task<Root> GetWeather(double latitude, double longitude)
+        public static async Task<Root> GetWeather(double latitude, double longitude)
         {
             var httpClient = new HttpClient();
-            var response = await httpClient.GetStringAsync(string.Format("https://api.openweathermap.org/data/2.5/weather?lat={0}&lon={1}&appid=9cd2cb299a8218f07926893c58d696cb", latitude, longitude));
+            var response = await httpClient.GetStringAsync(string.Format("https://api.openweathermap.org/data/2.5/weather?lat={0}&lon={1}&units=metric&appid=9cd2cb299a8218f07926893c58d696cb", latitude, longitude));
             return JsonConvert.DeserializeObject<Root>(response);
         }
     }
