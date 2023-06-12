@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mauiPopup:BasePopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mauiPopup="clr-namespace:MauiPopup.Views;assembly=MauiPopup"
+             x:Class="Pololetni_projekt.PopupPage"
+             IsCloseOnBackgroundClick="True"
+             Title="PopupPage">
+    
+    <VerticalStackLayout HeightRequest="500" WidthRequest="350" >
+        <Label Text="Calibration"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               Margin="10"
+               TextColor="#b0b0b0"
+               FontSize="17"/>
+        
+        <Label Text="Tilt and move your phone like this:" 
+               FontSize="20" 
+               HorizontalOptions="Center"/>
+        <Image Source="calibrate2.png" Margin="30" />
+
+        <HorizontalStackLayout HorizontalOptions="Center" >
+            <Button  x:Name="btn_start" BackgroundColor="#96b6f2" Text="Start calibration" Margin="10" Clicked="Btn_Start"></Button>
+
+        </HorizontalStackLayout>
+        
+    </VerticalStackLayout>
+    
+</mauiPopup:BasePopupPage>
