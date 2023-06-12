@@ -8,40 +8,56 @@
     <ScrollView>
         <Grid  >
             <Grid.RowDefinitions>
-                <RowDefinition Height="400" />
+                <RowDefinition Height="250" />
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            
+
             <VerticalStackLayout
-            Spacing="10"
-            Padding="30,0"
-            Grid.Row="0"
-            BackgroundColor="Crimson">
+                Padding="30,0"
+                Grid.Row="0"
+                BackgroundColor="#fff1de">
 
-            <Button HorizontalOptions="Start" Text="Calibrate" BackgroundColor="#f7e1ad" Clicked="Calibrate" TextColor="Black"></Button>
-
-            <Label x:Name="CompassLabel" Text="Off" HorizontalOptions="Center"/>
-            <Label x:Name="LocationLabel" Text="" />
-                <Label x:Name="temperature" Text="" BackgroundColor="blue" TextColor="White" Margin="0"/>
-                <Label x:Name="city" Text="" BackgroundColor="blue" TextColor="White"/>
-                <Label x:Name="pocasi" Text="" BackgroundColor="blue" TextColor="White"/>
+                <HorizontalStackLayout>
+                    <VerticalStackLayout Margin="30,50,10,30" >
+                            <!--Temperature-->
+                            <Label x:Name="temperature" 
+                               TextColor="Black" 
+                               FontSize="60"/>
+                            <!--Weather-->
+                            <Label x:Name="pocasi" 
+                               TextColor="#757575"
+                               FontSize="17"
+                               HorizontalTextAlignment="Center"/>
+                            <!--City-->
+                            <Label x:Name="city" 
+                               TextColor="Black"
+                               FontSize="40"
+                               HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    
+                    <!--Weather image-->
+                    <Image x:Name="image" WidthRequest="150" HeightRequest="150" />
+                </HorizontalStackLayout>
                 
-                <!--Background="Aqua"-->
-            <Border x:Name="border" 
-                    Padding="16,8"
-                    HorizontalOptions="Center"
-                    StrokeThickness="0">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="40,40,40,40" />
-                </Border.StrokeShape>
-                <Label x:Name="Direction" Text="" HorizontalOptions="Center" FontSize="Large" />
-            </Border>
-            <Image x:Name="image" WidthRequest="100" BackgroundColor="White"/>
+                <!--Location label-->
+                <Label x:Name="LocationLabel" TextColor="#4a4a4a" Text="" FontSize="15" HorizontalOptions="Center"/>
                 
             </VerticalStackLayout>
 
-            
-            <VerticalStackLayout Grid.Row="1" BackgroundColor="NavajoWhite">
+
+            <VerticalStackLayout Grid.Row="1" BackgroundColor="#F4D3D3" >
+                <!--Calibrate-->
+                <Button HorizontalOptions="Start" 
+                        Text="Calibrate" 
+                        BackgroundColor="#E8A9A9" 
+                        Clicked="Calibrate" 
+                        TextColor="White"
+                        Margin="10,10,10,0"></Button>
+                <!--Direction-->
+                <Label x:Name="Direction" Text="" HorizontalOptions="Center" FontSize="30" Margin="0,0,0,10" />
+                <!--Degrees-->
+                <Label x:Name="CompassLabel" HorizontalOptions="Center" Margin="0,0,0,10"/>
+                <!--Compass image-->
                 <Image x:Name="compass"
                     Source="compass.png"
                     Grid.Row="1" 

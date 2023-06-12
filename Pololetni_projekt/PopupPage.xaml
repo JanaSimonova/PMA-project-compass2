@@ -12,7 +12,7 @@
                HorizontalOptions="Center"
                Margin="10"
                TextColor="#b0b0b0"
-               FontSize="17"/>
+               FontSize="18"/>
         
         <Label Text="Tilt and move your phone like this:" 
                FontSize="20" 
@@ -20,7 +20,7 @@
         <Image Source="calibrate2.png" Margin="30" />
 
         <HorizontalStackLayout HorizontalOptions="Center" >
-            <Button  x:Name="btn_start" BackgroundColor="#96b6f2" Text="Start calibration" Margin="10" Clicked="Btn_Start"></Button>
+            <Button  x:Name="btn_start" BackgroundColor="#E8A9A9" Text="Start calibration" Margin="10" Clicked="Btn_Start"></Button>
 
         </HorizontalStackLayout>
         
