@@ -44,7 +44,7 @@
                 
             </VerticalStackLayout>
 
-
+            <!---->
             <VerticalStackLayout Grid.Row="1" BackgroundColor="#F4D3D3" >
                 <!--Calibrate-->
                 <Button HorizontalOptions="Start" 
